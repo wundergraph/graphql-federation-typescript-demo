@@ -46,6 +46,7 @@ const resolvers = {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  introspection: process.env.NODE_ENV !== "production",
 });
 
 type Request = {

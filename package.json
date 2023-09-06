@@ -11,9 +11,21 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
   "dependencies": {
     "@apollo/server": "^4.9.3",
+    "@opentelemetry/api": "^1.4.1",
+    "@opentelemetry/auto-instrumentations-node": "^0.39.2",
+    "@opentelemetry/core": "^1.15.2",
+    "@opentelemetry/exporter-metrics-otlp-proto": "^0.41.2",
+    "@opentelemetry/exporter-trace-otlp-proto": "^0.41.2",
+    "@opentelemetry/instrumentation": "^0.41.2",
+    "@opentelemetry/instrumentation-express": "^0.33.1",
+    "@opentelemetry/instrumentation-graphql": "^0.35.1",
+    "@opentelemetry/instrumentation-http": "^0.41.2",
+    "@opentelemetry/resources": "^1.15.2",
+    "@opentelemetry/sdk-node": "^0.41.2",
+    "@opentelemetry/sdk-trace-base": "^1.15.2",
+    "@opentelemetry/sdk-trace-node": "^1.15.2",
     "graphql": "^16.8.0"
   },
   "devDependencies": {

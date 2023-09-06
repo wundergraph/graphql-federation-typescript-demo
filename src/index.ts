@@ -1,3 +1,7 @@
+// XXX: Put this at the top, telemetry has to be initialized before instrumented
+// packages (http, express, graphql, etc...) are loaded
+import "./telemetry";
+
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 import { IncomingMessage } from "http";
@@ -65,7 +69,7 @@ const isIntrospectionQuery = (req: IncomingMessage) => {
 //  1. creates an Express app
 //  2. installs your ApolloServer instance as middleware
 //  3. prepares your app to handle incoming requests
-const { url } = await startStandaloneServer(server, {
+startStandaloneServer(server, {
   context: async ({ req }) => {
     if (isIntrospectionQuery(req)) {
       console.log("introspection");
@@ -74,7 +78,7 @@ const { url } = await startStandaloneServer(server, {
     }
     return {};
   },
-  listen: { port: 4000 },
+  listen: { port: 9001 },
+}).then(({ url }) => {
+  console.log(`🚀  Server ready at: ${url}`);
 });
-
-console.log(`🚀  Server ready at: ${url}`);

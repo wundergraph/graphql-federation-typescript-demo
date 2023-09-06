@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "tsc",
-    "start": "npm run compile && node ./dist/index.js"
+    "copy": "copyfiles -f src/schema.graphql dist",
+    "start": "npm run compile && npm run copy && node ./dist/index.js"
   },
   "keywords": [],
   "author": "",
@@ -30,6 +31,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.5.9",
+    "copyfiles": "^2.4.1",
     "typescript": "^5.2.2"
   }
 }

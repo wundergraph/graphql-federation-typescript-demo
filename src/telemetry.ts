@@ -30,7 +30,7 @@ const initOpenTelemetry = () => {
     resource: Resource.default().merge(
       new Resource({
         "service.name":
-          process.env.OTEL_SERVICE_NAME || "apollo-server-otel-demo",
+          process.env.OTEL_SERVICE_NAME || "graphql-federation-typescript-demo",
       })
     ),
   });
